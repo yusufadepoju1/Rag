@@ -1,0 +1,30 @@
+
+
+
+
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card upload-card">
+    <div class="chat-header">
+        <h2>Upload Documents</h2>
+    </div>
+
+    <p class="subtitle">Upload PDF or TXT files to build your knowledge base.</p>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-box">
+        <input type="file" name="file" required>
+        <button type="submit">Upload Document</button>
+    </form>
+
+    <h3>Uploaded Files</h3>
+    <ul class="file-list">
+        {% for file in files %}
+            <li>{{ file }}</li>
+        {% else %}
+            <li class="empty">No documents uploaded yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

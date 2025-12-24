@@ -1,0 +1,26 @@
+ {% extends "base.html" %}
+{% block content %}
+
+<div class="card chat-card">
+    <div class="chat-header">
+        <h2>Chat with Your Documents</h2>
+    </div>
+
+    <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+            Ask any question based on your uploaded documents.
+        </div>
+    </div>
+
+    <form id="chatForm" class="chat-form">
+        <input type="text" id="userInput" placeholder="Ask a question..." required>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+{% endblock %} 
+ 
+
+
